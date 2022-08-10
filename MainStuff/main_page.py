@@ -30,23 +30,81 @@ class Mainpage(Base):
 
 
     def log_succes(self,username,password): # metodo para hacer prueba del login correctamente
-        #TIRANDO SC A LA PAGINA PRINCIPAL
-        self.driver.save_screenshot('resultados/main_page.png')
 
         self.driver.find_element(By.XPATH,"//*[@id='user-name']").send_keys(username) #USERNAME
         self.driver.find_element(By.XPATH,"//*[@id='password']").send_keys(password) #PASSWORD
         self.driver.find_element(By.XPATH,"//*[@id='login-button']").click() #CLICK LOGIN
 
+        # esperando que cargue los prodcutos
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']")))
+
+        # screenshot cuando es exitoso
         self.driver.save_screenshot('C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/Login_succes.png') #SC LOGIN SUCCES
 
-        self.driver.find_element(By.XPATH,"//*[@id='react-burger-menu-btn']").click()  # CLICK ICON MENU
-        time.sleep(3)
-        self.driver.save_screenshot('C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/MENU_ICCON.png')  # SC menuicon
 
-        self.wait.until(EC.presence_of_element_located((By.ID,"logout_sidebar_link" ))) # ESPERANDO EL LOGOUT BUTTOM
+    def checkout_fail(self, username,password):  # metodo para hacer prueba del login correctamente
 
-        self.driver.find_element(By.ID,"logout_sidebar_link").click()  # CLICK LOGOUT
+        #logeando
+        self.driver.find_element(By.XPATH, "//*[@id='user-name']").send_keys(username)  # USERNAME
+        self.driver.find_element(By.XPATH, "//*[@id='password']").send_keys(password)  # PASSWORD
+        self.driver.find_element(By.XPATH, "//*[@id='login-button']").click()  # CLICK LOGIN
 
-        self.driver.save_screenshot('C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/logout_succes.png')  # SC logout
+        #esperando que cargue los prodcutos
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']")))
+        #agregando producto a carrito
+        self.driver.find_element(By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']").click()
 
+        #dando click al carrito
+        self.driver.find_element(By.ID, "shopping_cart_container").click()  # CLICK LOGOUT
+
+        #dandole click al checkout
+        self.driver.find_element(By.XPATH, "// *[ @ id = 'checkout']").click()
+
+        #dandole click a continue
+        self.driver.find_element(By.ID, "continue").click()
+
+        #esperando el error
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "// *[ @ id = 'checkout_info_container'] / div / form / div[1] / div[4] / h3 / button")))
+        #tirando sc cuando falla
+        self.driver.save_screenshot(
+            'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/checkout_fail.png')
+
+
+    def checkout_succes(self, username,password,first,last,zip):  # metodo para hacer prueba del login correctamente
+
+        #logeando
+        self.driver.find_element(By.XPATH, "//*[@id='user-name']").send_keys(username)  # USERNAME
+        self.driver.find_element(By.XPATH, "//*[@id='password']").send_keys(password)  # PASSWORD
+        self.driver.find_element(By.XPATH, "//*[@id='login-button']").click()  # CLICK LOGIN
+
+        #esperando que cargue los prodcutos
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']")))  # ESPERANDO EL LOGOUT BUTTOM
+        #agregando producto a carrito
+        self.driver.find_element(By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']").click()
+
+        #dando click al carrito
+        self.driver.find_element(By.ID, "shopping_cart_container").click()  # CLICK LOGOUT
+
+        #dandole click al checkout
+        self.driver.find_element(By.XPATH, "// *[ @ id = 'checkout']").click()
+
+        #llenando formulario
+        self.driver.find_element(By.XPATH, "//*[@id='first-name']").send_keys(first)  # firtsname
+        self.driver.find_element(By.XPATH, "//*[@id='last-name']").send_keys(last)  # lastname
+        self.driver.find_element(By.XPATH, "//*[@id='postal-code']").send_keys(zip)  # zip
+
+
+        #dandole click a continue
+        self.driver.find_element(By.ID, "continue").click()
+
+        #dandole click a finish
+        self.driver.find_element(By.ID, "finish").click()
+
+
+        #esperando que muestre el mensaje exitoso
+        self.wait.until(EC.presence_of_element_located((By.ID, "back-to-products")))
+
+        #tirando sc cuando es exitoso
+        self.driver.save_screenshot(
+            'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/checkout_succes.png')
 

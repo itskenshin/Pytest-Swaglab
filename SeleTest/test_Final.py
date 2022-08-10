@@ -33,3 +33,9 @@ class TestSearh():
 
     def test_login_succes(self,Test_inicialP):
         self.page.log_succes('standard_user','secret_sauce')
+
+    def test_checkout_fail(self,Test_inicialP):
+        self.page.checkout_fail('standard_user','secret_sauce')
+
+    def test_checkout_succes(self,Test_inicialP):
+        self.page.checkout_succes('standard_user','secret_sauce','jonathan','montero','12345')
