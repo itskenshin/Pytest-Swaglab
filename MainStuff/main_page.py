@@ -126,9 +126,7 @@ class Mainpage(Base):
         self.driver.find_element(By.XPATH, "//*[@id='user-name']").send_keys(username)  # USERNAME
         self.driver.find_element(By.XPATH, "//*[@id='password']").send_keys(password)  # PASSWORD
         self.driver.find_element(By.XPATH, "//*[@id='login-button']").click()  # CLICK LOGIN
-
         time.sleep(3)
-
         # tirando sc cuando es exitoso
         self.driver.save_screenshot(
             'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/products_fail.png')

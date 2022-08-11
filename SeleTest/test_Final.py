@@ -42,6 +42,5 @@ class TestSearh():
 
     def test_product_succes(self,Test_inicialP):
         self.page.products_succes('standard_user','secret_sauce')
-
     def test_product_fail(self,Test_inicialP):
         self.page.products_fail('problem_user','secret_sauce')
