@@ -35,8 +35,8 @@ class Mainpage(Base):
         self.driver.find_element(By.XPATH,"//*[@id='password']").send_keys(password) #PASSWORD
         self.driver.find_element(By.XPATH,"//*[@id='login-button']").click() #CLICK LOGIN
 
-        # esperando que cargue los prodcutos
-        self.wait.until(EC.presence_of_element_located((By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']")))
+
+        time.sleep(3)
 
         # screenshot cuando es exitoso
         self.driver.save_screenshot('C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/Login_succes.png') #SC LOGIN SUCCES
@@ -78,7 +78,7 @@ class Mainpage(Base):
         self.driver.find_element(By.XPATH, "//*[@id='login-button']").click()  # CLICK LOGIN
 
         #esperando que cargue los prodcutos
-        self.wait.until(EC.presence_of_element_located((By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']")))  # ESPERANDO EL LOGOUT BUTTOM
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']")))
         #agregando producto a carrito
         self.driver.find_element(By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']").click()
 
@@ -108,3 +108,27 @@ class Mainpage(Base):
         self.driver.save_screenshot(
             'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/checkout_succes.png')
 
+
+    def products_succes(self,username,password):
+
+        # logeando
+        self.driver.find_element(By.XPATH, "//*[@id='user-name']").send_keys(username)  # USERNAME
+        self.driver.find_element(By.XPATH, "//*[@id='password']").send_keys(password)  # PASSWORD
+        self.driver.find_element(By.XPATH, "//*[@id='login-button']").click()  # CLICK LOGIN
+
+        time.sleep(3)
+        # tirando sc cuando es exitoso
+        self.driver.save_screenshot(
+            'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/products_succes.png')
+
+    def products_fail(self, username, password):
+        # logeando
+        self.driver.find_element(By.XPATH, "//*[@id='user-name']").send_keys(username)  # USERNAME
+        self.driver.find_element(By.XPATH, "//*[@id='password']").send_keys(password)  # PASSWORD
+        self.driver.find_element(By.XPATH, "//*[@id='login-button']").click()  # CLICK LOGIN
+
+        time.sleep(3)
+
+        # tirando sc cuando es exitoso
+        self.driver.save_screenshot(
+            'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/products_fail.png')

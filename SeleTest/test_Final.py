@@ -39,3 +39,9 @@ class TestSearh():
 
     def test_checkout_succes(self,Test_inicialP):
         self.page.checkout_succes('standard_user','secret_sauce','jonathan','montero','12345')
+
+    def test_product_succes(self,Test_inicialP):
+        self.page.products_succes('standard_user','secret_sauce')
+
+    def test_product_fail(self,Test_inicialP):
+        self.page.products_fail('problem_user','secret_sauce')
