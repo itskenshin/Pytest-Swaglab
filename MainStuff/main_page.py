@@ -156,3 +156,58 @@ class Mainpage(Base):
         # tirando sc cuando es exitoso
         self.driver.save_screenshot(
             'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/userblock_succes.png')
+
+    # este metodo se encarga de probar que los productos al agregar son removidos correctamente.
+    def remove_succes(self,username,password):
+
+        # logeando
+        self.driver.find_element(By.XPATH, "//*[@id='user-name']").send_keys(username)  # USERNAME
+        self.driver.find_element(By.XPATH, "//*[@id='password']").send_keys(password)  # PASSWORD
+        self.driver.find_element(By.XPATH, "//*[@id='login-button']").click()  # CLICK LOGIN
+
+        # esperando que cargue los prodcutos
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']")))
+
+        # agregando producto a carrito
+        self.driver.find_element(By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']").click()
+
+        # tirando sc cuando es exitoso agregar el producto
+        self.driver.save_screenshot(
+            'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/add_product_succes.png')
+
+        #remove products
+        self.driver.find_element(By.XPATH, "// *[ @ id = 'remove-sauce-labs-backpack']").click()
+
+        # tirando sc cuando es fallido remover productos
+        self.driver.save_screenshot(
+            'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/remover_product_succes.png')
+
+        # este metodo se encarga de probar que los productos al agregar no pueden ser removidos.
+
+    # este metodo se encarga de probar que los productos al agregar no pueden ser removidos
+    def remove_fail(self,username,password):
+
+        # logeando
+        self.driver.find_element(By.XPATH, "//*[@id='user-name']").send_keys(username)  # USERNAME
+        self.driver.find_element(By.XPATH, "//*[@id='password']").send_keys(password)  # PASSWORD
+        self.driver.find_element(By.XPATH, "//*[@id='login-button']").click()  # CLICK LOGIN
+
+        # esperando que cargue los prodcutos
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']")))
+
+        # agregando producto a carrito
+        self.driver.find_element(By.XPATH, "// *[ @ id = 'add-to-cart-sauce-labs-backpack']").click()
+
+        # tirando sc cuando es exitoso agregar el producto
+        self.driver.save_screenshot(
+            'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/add_product_succes.png')
+
+        #remove products
+        self.driver.find_element(By.XPATH, "// *[ @ id = 'remove-sauce-labs-backpack']").click()
+
+        # tirando sc cuando es fallido remover productos
+        self.driver.save_screenshot(
+            'C:/Users/zomal/PycharmProjects/pyTestSwagLabs/results/remover_product_fail.png')
+
+
+

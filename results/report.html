@@ -243,7 +243,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 11-Aug-2022 at 19:13:40 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 11-Aug-2022 at 20:56:49 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -259,8 +259,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.5</td></tr></table>
     <h2>Summary</h2>
-    <p>7 tests ran in 38.15 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">6 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>11 tests ran in 71.51 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">10 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -275,16 +275,16 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Failed</td>
           <td class="col-name">SeleTest/test_Final.py::TestSearh::test_url</td>
-          <td class="col-duration">2.58</td>
+          <td class="col-duration">2.59</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;SeleTest.test_Final.TestSearh object at 0x0000020745F563B0&gt;, Test_inicialP = None<br/><br/>    def test_url(self,Test_inicialP):<br/>&gt;       self.page.chek_url(&quot;https://youtube.com&quot;)<br/><br/>SeleTest\test_Final.py:31: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;MainStuff.main_page.Mainpage object at 0x0000020745F57B20&gt;, url = &#x27;https://youtube.com&#x27;<br/><br/>    def chek_url(self,url):<br/>&gt;       assert self.give_url() == url # si la url que le pasamos es igual a la url true si no tira error..<br/><span class="error">E       AssertionError</span><br/><br/>MainStuff\main_page.py:19: AssertionError<br/></div></td></tr></tbody>
+            <div class="log">self = &lt;SeleTest.test_Final.TestSearh object at 0x00000140BAA42B60&gt;, Test_inicialP = None<br/><br/>    def test_url(self,Test_inicialP):<br/>&gt;       self.page.chek_url(&quot;https://youtube.com&quot;)<br/><br/>SeleTest\test_Final.py:34: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;MainStuff.main_page.Mainpage object at 0x00000140BAA42710&gt;, url = &#x27;https://youtube.com&#x27;<br/><br/>    def chek_url(self,url):<br/>&gt;       assert self.give_url() == url # si la url que le pasamos es igual a la url true si no tira error..<br/><span class="error">E       AssertionError</span><br/><br/>MainStuff\main_page.py:18: AssertionError<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">SeleTest/test_Final.py::TestSearh::test_login_fail</td>
-          <td class="col-duration">2.78</td>
+          <td class="col-duration">2.84</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -293,7 +293,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">SeleTest/test_Final.py::TestSearh::test_login_succes</td>
-          <td class="col-duration">6.12</td>
+          <td class="col-duration">6.05</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -302,7 +302,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">SeleTest/test_Final.py::TestSearh::test_checkout_fail</td>
-          <td class="col-duration">3.13</td>
+          <td class="col-duration">3.15</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -311,7 +311,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">SeleTest/test_Final.py::TestSearh::test_checkout_succes</td>
-          <td class="col-duration">4.87</td>
+          <td class="col-duration">3.69</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -320,7 +320,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">SeleTest/test_Final.py::TestSearh::test_product_succes</td>
-          <td class="col-duration">8.45</td>
+          <td class="col-duration">7.43</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -329,7 +329,43 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">SeleTest/test_Final.py::TestSearh::test_product_fail</td>
-          <td class="col-duration">9.92</td>
+          <td class="col-duration">11.79</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">SeleTest/test_Final.py::TestSearh::test_user_not_block</td>
+          <td class="col-duration">10.19</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">SeleTest/test_Final.py::TestSearh::test_user_block</td>
+          <td class="col-duration">8.68</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">SeleTest/test_Final.py::TestSearh::test_remove_product_succes</td>
+          <td class="col-duration">6.95</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">SeleTest/test_Final.py::TestSearh::test_remove_product_fail</td>
+          <td class="col-duration">7.81</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">

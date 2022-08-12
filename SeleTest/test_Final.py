@@ -64,3 +64,11 @@ class TestSearh():
 
     def test_user_block(self,Test_inicialP):
         self.page.user_block('locked_out_user','secret_sauce')
+
+########################remove producst tests#######################
+
+    def test_remove_product_succes(self,Test_inicialP):
+        self.page.remove_succes("standard_user","secret_sauce")
+
+    def test_remove_product_fail(self,Test_inicialP):
+        self.page.remove_fail("problem_user","secret_sauce")
